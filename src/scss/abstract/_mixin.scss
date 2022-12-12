@@ -1,0 +1,5 @@
+@use './variables' as *;
+
+@mixin set-shadow {
+    box-shadow: 4px 5px 12px 0px $white-mode-inputs;
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import ListCards from './layouts/list-card/list-card-layout';
-import './app.scss'
+import ListCards from './layouts/list-card/ListCard';
+import './app.scss';
+import Navbar from './components/navbar/Navbar';
 
 export default function App() {
   const urlByName = 'https://restcountries.com/v3.1/name/';
@@ -12,7 +13,7 @@ export default function App() {
 
   useEffect(() => {
     if (queryCountry.length >= 3) {
-      setIsLoading(true)
+      setIsLoading(true);
       return async () => {
         const response = await fetch(`${urlByName}/${queryCountry}`);
         const data = await response.json();
@@ -21,9 +22,8 @@ export default function App() {
           console.log(data);
           setCountries(data);
           setIsLoading(false);
-          setQueryCountry('')
-        },1500)
-
+          setQueryCountry('');
+        }, 1500);
       };
     }
   }, [queryCountry]);
@@ -45,16 +45,7 @@ export default function App() {
 
   return (
     <>
-      <h1>Descubriendo el mundo</h1>
-      <section>
-        <input
-          type="search"
-          name="searchCountry"
-          placeholder="España"
-          onChange={handleQueryCountrie}
-          value={queryCountry}
-        />
-      </section>
+      <Navbar></Navbar>
       <ListCards></ListCards>
       {/* <section>
         {
