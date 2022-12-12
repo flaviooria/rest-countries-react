@@ -5,7 +5,7 @@ import Navbar from './components/navbar/Navbar';
 
 export default function App() {
   const urlByName = 'https://restcountries.com/v3.1/name/';
-  const urlByCode = 'https://restcountries.com/v3.1/alpha?codes=col,pe,arg';
+  // const urlByCode = 'https://restcountries.com/v3.1/alpha?codes=col,pe,arg';
 
   const [queryCountry, setQueryCountry] = useState('');
   const [countries, setCountries] = useState([]);
