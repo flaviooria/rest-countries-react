@@ -8,15 +8,19 @@ export default function App() {
     const [countries, setCountries] = useState([]);
 
     
-    const handleQueryCountrie = (e) => {
-        setQueryCountrie(e.target.value);
+    const handleQueryCountry = (e) => {
+        setQueryCountry(e.target.value);
+    }
+
+    const setNameCountry = () => {
+        
     }
 
   return (
     <>
         <h1>Descubriendo el mundo</h1>
         <section>
-            <input type="search" name="searchCountry" placeholder='España' />
+            <input type="search" name="searchCountry" placeholder='España' onChange={handleQueryCountry} value={queryCountry} />
             <button>Buscar</button>
         </section>
         <section>
