@@ -14,17 +14,18 @@ export default function App() {
   useEffect(() => {
     if (queryCountry.length >= 3) {
       setIsLoading(true);
-      return async () => {
+      const setCountrySearched = async () => {
         const response = await fetch(`${urlByName}/${queryCountry}`);
         const data = await response.json();
 
         setTimeout(() => {
           console.log(data);
-          setCountries(data);
+          setCountries([...data]);
           setIsLoading(false);
-          setQueryCountry('');
         }, 1500);
       };
+
+      setCountrySearched();
     }
   }, [queryCountry]);
 
@@ -32,36 +33,21 @@ export default function App() {
     setQueryCountry(e.target.value);
   };
 
-  const dataCountrie = countries[0];
-
-  const country = {
-    name: dataCountrie?.name.common,
-    capital: dataCountrie?.capital,
-    region: dataCountrie?.region,
-    population: dataCountrie?.population,
-    flag: dataCountrie?.flags.svg,
-    borders: dataCountrie?.borders,
-  };
-
   return (
     <>
-      <Navbar></Navbar>
-      <ListCards></ListCards>
-      {/* <section>
-        {
-          isLoading ? (<p>Cargando ... </p>) : null 
-        }
-        {dataCountrie ? (
-          <>
-            <p>{country.name}</p>
-            <p>{country.capital}</p>
-            <p>{country.region}</p>
-            <p>{country.population}</p>
-            <img src={country.flag} alt="flag country" />
-            <p>{country.borders.join(', ')}</p>
-          </>
-        ) : null}
-      </section> */}
+      <Navbar
+        handle={handleQueryCountrie}
+        query={queryCountry}
+        setCountries={setCountries}
+        setLoading={setIsLoading}
+      ></Navbar>
+      {isLoading ? (
+        <div className="spinner-container">
+          <div className="lds-dual-ring"></div>
+        </div>
+      ) : (
+        <ListCards countries={countries}></ListCards>
+      )}
     </>
   );
 }

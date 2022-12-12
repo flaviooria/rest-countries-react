@@ -2,7 +2,7 @@ import React from 'react';
 import { SearchBar } from './SearchBar';
 import { SelectRegion } from './SelectRegion';
 
-export default function Navbar({ query, handle }) {
+export default function Navbar({ query, handle, setCountries, setLoading}) {
   return (
     <section className="navbar">
       <div className="navbar-content">
@@ -16,7 +16,7 @@ export default function Navbar({ query, handle }) {
           queryCountry={query}
           handleQueryCountrie={handle}
         ></SearchBar>
-        <SelectRegion></SelectRegion>
+        <SelectRegion handleCountries={setCountries} setLoading={setLoading}></SelectRegion>
       </div>
     </section>
   );
