@@ -1,0 +1,7 @@
+@use './scss/abstract' as *;
+@use './scss/components/' as *;
+
+body {
+    font-family: $font;
+    background-color: $white-mode-background;
+}
