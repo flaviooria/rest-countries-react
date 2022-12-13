@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 export function SelectRegion({ handleCountries, setLoading }) {
   const urlByRegion = 'https://restcountries.com/v3.1/region';
 
-  const [region, setRegion] = useState('');
+  const [region, setRegion] = useState('Europe');
 
   useEffect(() => {
     if (region === '') {
@@ -17,7 +17,7 @@ export function SelectRegion({ handleCountries, setLoading }) {
       setTimeout(() => {
         setLoading(false);
         handleCountries([...data]);
-      }, 3000);
+      }, 1000);
     };
 
     setCountriesByRegion();
@@ -35,7 +35,7 @@ export function SelectRegion({ handleCountries, setLoading }) {
       id="filterRegion"
       onChange={handleSetRegionSelect}
     >
-      <option defaultValue={'Europe'} value="">
+      <option defaultValue={region} value="">
         Filter by Region
       </option>
       <option value="Europe">Europe</option>
