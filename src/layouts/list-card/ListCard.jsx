@@ -1,21 +1,29 @@
 import React from 'react';
 import Card from '../../components/card/Card';
 import getCountryModel from '../../utils/country';
+import { Link } from 'react-router-dom';
 
 export default function ListCards({ countries }) {
   return (
     <div className="cards-content">
       {countries.map((country) => {
-        const { name, population, region, capital, flag } = getCountryModel(country);
+        const countryModel = getCountryModel(country);
+        const { name, population, region, capital, flag } = countryModel;
         return (
-          <Card
-            name={name}
-            capital={capital}
-            population={population}
-            region={region}
-            flag={flag}
+          <Link
             key={name}
-          ></Card>
+            to={`/country/${name}`}
+            state={countryModel}
+            className="link-country"
+          >
+            <Card
+              name={name}
+              capital={capital}
+              population={population}
+              region={region}
+              flag={flag}
+            ></Card>
+          </Link>
         );
       })}
     </div>
