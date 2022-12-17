@@ -1,12 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function CountryCard({ country }) {
-  const { name, population, region, capital, flag, languages, subregion } = country;
+  const {
+    name,
+    nativeName,
+    population,
+    region,
+    capital,
+    flag,
+    languages,
+    subregion,
+    tld,
+    currency,
+  } = country;
   return (
     <div className="country-card">
       <div className="country-button">
-        <Link to={'/'}>Back</Link>
+        <Link to={"/"}>Back</Link>
       </div>
       <div className="country-detail">
         <div className="country-detail-image">
@@ -17,30 +28,30 @@ export default function CountryCard({ country }) {
           <div className="country-detail-content__props">
             <div>
               <p className="props">
-                Native Name: <span></span>
+                Native Name: <span>{nativeName ?? "Not available"}</span>
               </p>
               <p className="props">
-                Population: <span>{population}</span>
+                Population: <span>{population ?? "Not available"}</span>
               </p>
               <p className="props">
-                Region: <span>{region}</span>
+                Region: <span>{region ?? "Not available"}</span>
               </p>
               <p className="props">
-                Sub Region: <span>{subregion ?? 'No disponible'}</span>
+                Sub Region: <span>{subregion ?? "Not available"}</span>
               </p>
               <p className="props">
-                Capital: <span>{capital}</span>
+                Capital: <span>{capital ?? "Not available"}</span>
               </p>
             </div>
             <div>
               <p className="props">
-                Top Level Domain: <span></span>
+                Top Level Domain: <span>{tld ?? "Not available"}</span>
               </p>
               <p className="props">
-                Currencie: <span></span>
+                Currencie: <span>{currency ?? "Not available"}</span>
               </p>
               <p className="props">
-                Languages: <span>{languages && Object.values(languages).join(', ')}</span>
+                Languages: <span>{languages ?? "Not available"}</span>
               </p>
             </div>
           </div>

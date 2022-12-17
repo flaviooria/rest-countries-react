@@ -17,6 +17,7 @@
     @include abs.set-shadow();
     text-align: center;
     cursor: pointer;
+
     & a {
       text-decoration: none;
       color: black;
@@ -28,11 +29,14 @@
     display: grid;
     grid-template-columns: 400px 1fr;
     column-gap: 100px;
+
     &-image {
       grid-row: 1 / -1;
       grid-column: 1 / 2;
       overflow: hidden;
+
       & img {
+        @include abs.set-shadow();
         height: 300px;
         width: 100%;
         object-fit: cover;
@@ -49,6 +53,7 @@
 
         & .props {
           font-weight: abs.$font-600;
+
           & span {
             font-weight: abs.$font-300;
           }

@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 export function SelectRegion({ handleCountries, setLoading }) {
-  const urlByRegion = 'https://restcountries.com/v3.1/region';
+  const urlByRegion = "https://restcountries.com/v3.1/region";
 
-  const [region, setRegion] = useState('Europe');
+  const [region, setRegion] = useState("Europe");
 
   useEffect(() => {
-    if (region === '') {
+    if (region === "") {
       return;
     }
 
     const setCountriesByRegion = async () => {
       setLoading(true);
-      const response = await fetch(`${urlByRegion}/${region}`);
+      const response = await fetch(
+        `${urlByRegion}/${region}?fields=name,borders,capital,region,subregion,population,flags,nativeName,tld,languages,currencies`
+      );
       const data = await response.json();
       setTimeout(() => {
         setLoading(false);

@@ -8,7 +8,7 @@ export default function ListCards({ countries }) {
     <div className="cards-content">
       {countries.map((country) => {
         const countryModel = getCountryModel(country);
-        const { name, population, region, capital, flag } = countryModel;
+        const { name, population, region, capital, flag} = countryModel;
         return (
           <Link
             key={name}

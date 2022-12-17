@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ListCards from '../layouts/list-card/ListCard';
 import { useNavigate } from 'react-router-dom';
-import NavBarFields from '../components/navbar/NavBarFields';
+import NavBarFields from '../layouts/navbar-layout/NavBarFields';
 
 export default function Home() {
   const urlByName = 'https://restcountries.com/v3.1/name/';
@@ -15,13 +15,12 @@ export default function Home() {
     if (queryCountry.length >= 3) {
       setIsLoading(true);
       const setCountrySearched = async () => {
-        const response = await fetch(`${urlByName}/${queryCountry}`);
+        const response = await fetch(`${urlByName}/${queryCountry}?fields=name,borders,capital,region,subregion,population,flags,nativeName,tld,languages,currencies`);
         const data = await response.json();
-
         setTimeout(() => {
-          console.log(data);
           setCountries([...data]);
           setIsLoading(false);
+          setQueryCountry('');
         }, 1500);
       };
 
@@ -34,7 +33,7 @@ export default function Home() {
     setQueryCountry(e.target.value);
   };
 
-  
+
 
   return (
     <>
