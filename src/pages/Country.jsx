@@ -5,5 +5,5 @@ import CountryCard from '../layouts/country-card/CountryCard';
 export default function Country() {
   const location = useLocation();
 
-  return <CountryCard country={location.state}></CountryCard>;
+  return <CountryCard country={location.state} />;
 }

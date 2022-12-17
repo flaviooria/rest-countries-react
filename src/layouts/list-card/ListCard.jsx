@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Card from '../../components/card/Card';
 import getCountryModel from '../../utils/country';
-import { Link } from 'react-router-dom';
 
 export default function ListCards({ countries }) {
   return (

@@ -42,13 +42,13 @@ export default function Home() {
         setCountries={setCountries}
         query={queryCountry}
         setLoading={setIsLoading}
-      ></NavBarFields>
+       />
       {isLoading ? (
         <div className="spinner-container">
           <div className="lds-dual-ring"></div>
         </div>
       ) : (
-        <ListCards countries={countries}></ListCards>
+        <ListCards countries={countries} />
       )}
     </>
   );
