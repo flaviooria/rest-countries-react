@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './app.scss';
+import './app_mobile.scss';
 import Country from './pages/Country';
 import Home from './pages/Home';
 import Navbar from './components/navbar/Navbar';
