@@ -1,0 +1,59 @@
+@use '../abstract/' as abs;
+
+.country {
+  &-card {
+    padding: 50px;
+    display: grid;
+    grid-template-rows: 80px 1fr;
+  }
+
+  &-button {
+    grid-row: 1 / 2;
+    align-self: center;
+    width: 100px;
+    padding: 5px;
+    margin-bottom: 50px;
+    border-radius: 4px;
+    @include abs.set-shadow();
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &-detail {
+    grid-row: 2 / -1;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    column-gap: 100px;
+
+    &-image {
+      grid-row: 1 / -1;
+      grid-column: 1 / 2;
+      overflow: hidden;
+
+      & img {
+        @include abs.set-shadow();
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-content {
+      grid-row: 1 / -1;
+      grid-column: 2 / -1;
+
+      &__props {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        & .props {
+          font-weight: abs.$font-600;
+
+          & span {
+            font-weight: abs.$font-300;
+          }
+        }
+      }
+    }
+  }
+}

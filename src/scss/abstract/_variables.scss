@@ -11,3 +11,9 @@ $font: 'Nunito Sans', sans-serif;
 $font-300: 300;
 $font-600: 600;
 $font-800: 800;
+/*  Breakpoints */
+$bp-mobile-min: 375px;
+$bp-mobile-max: 480px;
+$bp-tablet-min: 520px;
+$bp-tablet-max: 768px;
+$bp-desktop-small:980px;

@@ -5,5 +5,49 @@ body {
     margin: 0;
     padding: 0;
     font-family: $font;
+}
+
+.light-theme {
+    height: 100%;
     background-color: $white-mode-background;
+    color: $dark-mode-text;
+    transition: background-color 500ms ease-in;
+
+    & a {
+        text-decoration: none;
+        color: $dark-mode-text;
+    }
+
+    .spinner-container {
+        & .lds-dual-ring {
+            &::after {
+                border: 6px solid $dark-mode-background;
+                border-color: $dark-mode-background transparent $dark-mode-background
+                transparent;
+            }
+        }
+    }
+}
+
+.dark-theme {
+    height: 100vh;
+    background-color: $dark-mode-background;
+    color: $white-mode-text;
+    transition: background-color 500ms ease-in;
+
+
+    & a {
+        text-decoration: none;
+        color: $white-mode-text;
+    }
+
+    .spinner-container {
+        & .lds-dual-ring {
+            &::after {
+                border: 6px solid $white-mode-inputs;
+                border-color: $white-mode-inputs transparent $white-mode-inputs
+                transparent;
+            }
+        }
+    }
 }
