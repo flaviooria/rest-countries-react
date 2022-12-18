@@ -16,9 +16,9 @@ export default function CountryCard({ country }) {
   } = country;
   return (
     <div className="country-card">
-      <div className="country-button">
-        <Link to={"/"}>Back</Link>
-      </div>
+      <Link to={"/"} className="country-button">
+        <span>Back</span>
+      </Link>
       <div className="country-detail">
         <div className="country-detail-image">
           <img src={flag} alt="flag country" />

@@ -17,11 +17,6 @@
     @include abs.set-shadow();
     text-align: center;
     cursor: pointer;
-
-    & a {
-      text-decoration: none;
-      color: black;
-    }
   }
 
   &-detail {
