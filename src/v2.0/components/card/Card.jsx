@@ -2,7 +2,7 @@ import React from 'react';
 
 export function Card({ name, population, region, capital, flag }) {
   return (
-    <article className="rounded-lg overflow-hidden bg-dark-background w-[350px] sm:w-[250px] md:w-[230px] lg:w-[250px] shadow-md shadow-gray-500 dark:text-white-background cursor-pointer">
+    <article className="rounded-lg overflow-hidden bg-dark-background w-[300px] sm:w-[250px] md:w-[230px] lg:w-[250px] shadow-md shadow-gray-500 dark:text-white-background cursor-pointer text-md">
       <img className="rounded-t-lg w-full h-[150px] object-cover" src={flag} alt="flag" />
       <div className="p-6">
         <h2 className="font-semibold text-lg truncate text-ellipsis">{name}</h2>

@@ -6,7 +6,7 @@ export function Navbar() {
       <div className="flex items-center justify-between dark:text-dark-text">
         <h1 className="font-extrabold text-title">Where in the world?</h1>
         <div className="font-semibold">
-          <p>Dark Mode</p>
+          <p></p>
         </div>
       </div>
     </section>

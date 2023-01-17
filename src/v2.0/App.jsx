@@ -1,8 +1,9 @@
 import React from 'react';
-import './index.css';
+import { Route, Routes } from 'react-router-dom';
 import { Navbar } from './components/navbar/Navbar';
+import './index.css';
+import Country from './pages/Country';
 import Home from './pages/Home';
-import { Routes, Route } from 'react-router-dom';
 
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
         <Navbar></Navbar>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/country/:name' element={<Country />} />
         </Routes>
       </section>
     </>

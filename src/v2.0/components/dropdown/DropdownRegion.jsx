@@ -34,7 +34,7 @@ export function DropdownRegion({ handleCountries, setLoading }) {
 
   return (
     <select
-      className="rounded-md h-10 font-semibold outline-none cursor-pointer"
+      className="rounded-md h-10 font-semibold outline-none cursor-pointer dark:bg-white dark:shadow-md dark:shadow-gray-600"
       name="filterRegion"
       id="filterRegion"
       onChange={handleSetRegionSelect}
